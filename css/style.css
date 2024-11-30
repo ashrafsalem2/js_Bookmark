@@ -1,0 +1,240 @@
+@font-face {
+  font-family: "pacifico";
+  src: url(../fonts/Pacifico/Pacifico-Regular.ttf);
+}
+@font-face {
+  font-family: "righteous";
+  src: url(../fonts/Righteous/Righteous-Regular.ttf);
+}
+@font-face {
+  font-family: "pt_sans_regular";
+  src: url(../fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf);
+}
+@font-face {
+  font-family: "pt_sans_bold";
+  src: url(../fonts/PT_Sans_Caption/PTSansCaption-Bold.ttf);
+}
+@font-face {
+  font-family: "bree_serf";
+  src: url(../fonts/Bree_Serif/BreeSerif-Regular.ttf);
+}
+
+:root {
+  /* font variables */
+  --body_font: "pt_sans_regular";
+  --big_header_font: "pacifico";
+  --sub_header_font: "righteous";
+  --table_header_font: "pt_sans_bold";
+  --error_header_font: "bree_serf";
+
+  /* color variables */
+  --body_color: #f7ecde;
+  --button_color: #d1512d;
+  --button_hover_color: #bb4120;
+  --big_header_color: #352e28;
+  --big_header_back_color: #fec260;
+  --sub_header_color: #212529;
+  --sub_header_first_color: #42a55c;
+  --sub_header_second_color:#87A950;
+  --sub_header_third_color: #B3AC49;
+  --edit_button_color:#B2AC4A;
+  --edit_button_color_hover: #9eb23b;
+  --delete_button_color: rgb(235, 33, 54);
+  --delete_button_color_hover:#D31C20;
+  --error_icons:#BB4120;
+  --box_shadow_color:##fec1605f ;
+}
+
+/* global seetings */
+body {
+  background-color: var(--body_color);
+  font-family: var(--body_font);
+  font-weight: 500;
+  color: var(--big_header_color);
+}
+.w-85 {
+  width: 85% !important;
+}
+/* header */
+
+.content header h1 {
+  font-family: var(--big_header_font);
+  position: relative;
+  transition: 0.5s all;
+  font-size: 50px !important;
+}
+.content header h1::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  width: 100%;
+  height: 30%;
+  background-color: var(--big_header_back_color);
+  z-index: -1;
+}
+
+.content header h1:hover::after {
+  transition: 0.3s all;
+  animation: hight_up 0.3s alternate forwards;
+}
+.content header h1:not(h1:hover)::after {
+  transition: 0.3s all;
+  animation: hight_down 0.3s alternate forwards;
+}
+
+@keyframes hight_up {
+  0% {
+    top: 60%;
+    height: 30%;
+  }
+  100% {
+    top: 40%;
+    height: 50%;
+  }
+}
+
+@keyframes hight_down {
+  0% {
+    top: 40%;
+    height: 50%;
+  }
+  100% {
+    top: 60%;
+    height: 30%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content_data ,
+  .table_content{
+    width: 100% !important;
+  }
+}
+.table_content,
+.content_data{
+    width: 85%;
+}
+.content_data {
+  border-top: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.content_data h4 {
+  font-family: var(--sub_header_font);
+  font-size: 25px;
+
+  background: linear-gradient(
+    to right,
+    var(--sub_header_first_color),
+    var(--sub_header_third_color),
+    var(--sub_header_second_color)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn_sub {
+  background-color: var(--button_color);
+  color: white;
+  transition: 0.5s all;
+}
+
+.btn_sub:hover {
+  background-color: var(--button_hover_color);
+}
+
+.content_data .form-control {
+  border-radius: 1;
+  padding: 10px;
+}
+.content_data .form-control:focus {
+  border-color: var(--big_header_back_color) !important;
+  outline: 0;
+  box-shadow: 0px 0px 0px 3px var(--box_shadow_color) !important;
+}
+
+.form_control_danger:focus{
+    --big_header_back_color: rgb(235, 33, 54) !important;
+    --box_shadow_color: rgb(235, 33, 54,0.4) !important;
+}
+
+.form_control_success:focus{
+    --big_header_back_color: rgb(66, 165, 92) !important;
+    --box_shadow_color: rgb(66, 165, 92,0.4) !important;
+}
+.table_content .table {
+    font-family: var(--table_header_font);
+}
+.table_content .table thead{
+    font-weight: 700;
+}
+
+.btn_edit{
+    background-color:var(--edit_button_color);
+    color:white;
+    transition: 0.5s all;
+}
+.btn_edit:hover{
+    background-color:var(--edit_button_color_hover);
+    color:white;
+}
+.btn_delete{
+    background-color:var(--delete_button_color);
+    color:white;
+    transition: 0.5s all;
+}
+.btn_delete:hover{
+    background-color:var(--delete_button_color_hover);
+    color:white;
+}
+/* fixed dialog */
+.error_message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error_message .tags{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.error_message .tags .right_tag .span_tomato,
+.error_message .tags .right_tag .span_yellow,
+.error_message .tags .right_tag .span_green{
+    width: 20px;
+    height: 20px;
+    
+    border-radius: 50%;
+}
+.error_message .tags i{
+    cursor: pointer;
+}
+.error_message .tags .right_tag .span_tomato{
+    background-color: #F15F5D;
+}
+.error_message .tags .right_tag .span_yellow{
+    background-color: #FEBE2E;
+}
+
+.error_message .tags .right_tag .span_green{
+    background-color: #4EB748;
+}
+.error_message p {
+    font-family: var(--error_header_font);
+    font-size: 21px;
+    color:#352e28;
+
+}
+.error_message ol li i{
+    color:var(--error_icons);
+    font-size: 18px;
+}

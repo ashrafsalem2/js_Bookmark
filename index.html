@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <!-- title icon -->
+    <link rel="icon" href="./images/title/bookmark.png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./css/all.css" />
+    <!-- custom styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div
+            class="content d-flex flex-column justify-content-center align-items-center"
+          >
+            <header class="my-5">
+              <h1 class="col-sm-12 py-2">Bookmarker</h1>
+            </header>
+            <div class="content_data ">
+              <h4 class="text-center py-3">
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+              </h4>
+              <div class="form-group p-3">
+                <label for="site_name" class="pb-1">
+                  <i class="fa-solid fa-book-bookmark pe-2"></i>
+                  Site Name
+                </label>
+                <input
+                  type="text"
+                  name="site_name"
+                  id="site_name"
+                  class="form-control"
+                  placeholder="Bookmark Name"
+                />
+                <div class="alert alert-danger mt-2 d-none" id="alert_name">
+                    <p class="text-danger">
+                        <ol class="list-unstyled text-start">
+                            <li><strong>name must at least 3 characters long</strong></li>
+                        </ol>
+                    </p>
+                </div>
+              </div>
+              <div class="form-group p-3">
+                <label for="site_url" class="pb-1">
+                  <i class="fa-solid fa-link pe-2"></i>
+                  Site URL
+                </label>
+                <input
+                  type="text"
+                  name="site_url"
+                  id="site_url"
+                  class="form-control"
+                  placeholder="website URL"
+                />
+                <div class="alert alert-danger mt-2 d-none" id="alert_url">
+                    <p class="text-danger">
+                        <ol class="list-unstyled text-start">
+                            <li>url may start with :  https</li>
+                            <li>url may start with : www.</li>
+                            <li><strong>url must end with : ( . ) and any characters you want after.</strong></li>
+                        </ol>
+                    </p>
+                </div>
+              </div>
+              <div class="div_action text-center py-3">
+                <button class="btn_sub py-2 px-5 border-0 rounded-1">
+                  Submit
+                </button>
+              </div>
+            </div>
+            <div class="table_content py-3">
+                <table class="table table-light text-center">
+                    <thead>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Vist</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody id="tbody">
+                        
+                    </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="error_message d-none" id="error_message">
+        <div class="error_content bg-white p-5 rounded-2 position-relative col-4">
+            <div class="tags w-100 d-flex justify-content-between p-4">
+                <div class="right_tag d-flex justify-content-center align-items-center column-gap-2">
+                    <span class="span_tomato"></span>
+                    <span class="span_yellow"></span>
+                    <span class="span_green"></span>
+                </div>
+                <i class="fa fa-close fa-2x"></i>
+            </div>
+            <p class="pt-4 text-start">Site Name or Url is not valid, Please follow the rules below :</p>
+            <ol class="list-unstyled text-start">
+                <li class="pb-2 d-none" id="name_error">
+                    <i class="fa-regular fa-circle-right p-2 fa-x2"></i>
+                    Site name must contain at least 3 characters
+                </li>
+                <li class=" d-none" id="url_error">
+                    <i class="fa-regular fa-circle-right p-2 fa-x2"></i>
+                    Site URL must be a valid one
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- bootstrap js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
