@@ -132,6 +132,11 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media screen and (max-width:400px) {
+    .content_data h4{
+        font-size: 20px; 
+    }
+}
 .btn_sub {
   background-color: var(--button_color);
   color: white;
@@ -186,6 +191,25 @@ body {
     background-color:var(--delete_button_color_hover);
     color:white;
 }
+
+@media screen and (max-width:400px) {
+    .btn_edit{
+     
+        font-size: 12px;
+        i{
+            display: none;
+        }
+        
+    }
+    .btn_delete{
+  
+        font-size: 12px;
+        i{
+            display: none;
+        }
+    }
+}
+
 /* fixed dialog */
 .error_message{
     position: fixed;
@@ -238,3 +262,4 @@ body {
     color:var(--error_icons);
     font-size: 18px;
 }
+
