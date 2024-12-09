@@ -89,7 +89,7 @@ function displayBookMarks(markList) {
                     <i class="fa-solid fa-eye pe-2"></i>
                     Visit
                 </button></td>
-                <td><button class="btn_delete px-3 py-2 border-0 rounded-1" onclick="deleteUrl(${i})">
+                <td><button class="btn_delete px-3 py-2 border-0 rounded-1" onclick="deleteUrl(${bookmarks.indexOf( markList[i])})">
                     <i class="fa-solid fa-trash-can"></i>
                     Delete
                 </button></td>
